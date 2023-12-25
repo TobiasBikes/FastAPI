@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UnitData</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 200px;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input, select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            color: black;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        @media (min-width: 600px) {
+            .input-group {
+                width: calc(50% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>GIS Data Search</h1>
+    <form action="/search" method="get">
+        <div class="container">
+            <!-- Postcode Region -->
+            <div class="input-group">
+                <label for="postcode">Postcode Region:</label>
+                <input type="text" id="postcode" name="postcode">
+            </div>
+
+            <!-- Include Column -->
+            <div class="input-group">
+                <label for="includeColumn">Include Column:</label>
+                <select id="includeColumn" name="includeColumn">
+                    <option value="column1">Column 1</option>
+                    <option value="column2">Column 2</option>
+                    <!-- More options -->
+                </select>
+            </div>
+
+            <!-- Exclude Column -->
+            <div class="input-group">
+                <label for="excludeColumn">Exclude Column:</label>
+                <select id="excludeColumn" name="excludeColumn">
+                    <option value="column1">Column 1</option>
+                    <option value="column2">Column 2</option>
+                    <!-- More options -->
+                </select>
+            </div>
+
+            <!-- Minimum Area -->
+            <div class="input-group">
+                <label for="minArea">Minimum Area (km²):</label>
+                <input type="number" id="minArea" name="minArea">
+            </div>
+
+            <!-- Maximum Area -->
+            <div class="input-group">
+                <label for="maxArea">Maximum Area (km²):</label>
+                <input type="number" id="maxArea" name="maxArea">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="input-group">
+                <input type="submit" value="Search">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
